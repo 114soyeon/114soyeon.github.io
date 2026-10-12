@@ -1,81 +1,57 @@
-$(function(){
-    // 스크롤시 헤더 색 변경
-    var $header = $('header');
+const menuToggle = document.querySelector('.ham_btn');
+const nav = document.querySelector('.nav');
+const navLinks = document.querySelectorAll('.menu');
 
-    $(window).scroll(function(){
-        if($(this).scrollTop() > 0){
-            $header.addClass('scroll');
-        }else{
-            $header.removeClass('scroll');
-        }
-    });
+menuToggle?.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+});
 
-    // gnb    
-    $('.gnb a').on('click', function(e){
-        e.preventDefault();
+navLinks.forEach(link => link.addEventListener('click', () => {
+  nav.classList.remove('open');
+  menuToggle?.setAttribute('aria-expanded', 'false');
+}));
 
-        var target = $(this).attr('href');
-        var headerH = $('header').outerHeight();
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
 
-        $('html, body').stop().animate({
-            scrollTop: $(target).offset().top - headerH
-        }, 700);
-    });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // skills 슬라이드
-    var swiper = new Swiper(".swiper.skill", {
-        slidesPerView: "auto",
-        spaceBetween: 20,
-        loop: true,
-        speed: 4000,
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-        },
-        allowTouchMove: false, 
-        breakpoints: {
-            400: { 
-                slidesPerView: 3,
-                spaceBetween: 30
-            },
-            640: { 
-                slidesPerView: 4
-            },
-            800: { 
-                slidesPerView: 5,
-                spaceBetween: 50
-            },
-            1400: {
-                slidesPerView: 6,
-                spaceBetween: 70
-            }
-        }		
-    });
+const sections = document.querySelectorAll('main section[id]');
+const setActiveNav = () => {
+  let current = 'home';
+  sections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 160) current = section.id;
+  });
+  navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${current}`));
+};
+window.addEventListener('scroll', setActiveNav, { passive: true });
+setActiveNav();
 
-    // works 슬라이드
-    var swiper2 = new Swiper(".swiper.works", {
-        spaceBetween: 100,
-        slidesPerView: 'auto',
-        centeredSlides: true, 
-        loop: true,
-        autoplay: {
-            delay: 5000,
-        },
-    });
+/* projects 슬라이드 */
+document.querySelectorAll('.works-slider-block').forEach(block => {
+  if (typeof Swiper === 'undefined') return;
 
-    var swiper3 = new Swiper(".swiper.second", {
-        spaceBetween: 100,
-        slidesPerView: 'auto',
-        centeredSlides: true, 
-        loop: true,
-        autoplay: {
-            delay: 5000,
-        },
-    });
-
-    // 탑버튼
-    $("#top_btn").click(function() { 
-		$('html, body').animate({ scrollTop : 0
-		}, 500);
-	});
+  new Swiper(block.querySelector('.works-slider'), {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 40,
+    breakpoints: {
+      900: { spaceBetween: 70 },
+      1200: { spaceBetween: 100 },
+    },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: block.querySelector('.swiper-pagination'),
+      clickable: true,
+    },
+  });
 });

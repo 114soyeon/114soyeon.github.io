@@ -1,354 +1,538 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/common.css" type="text/css">
-    <link rel="stylesheet" href="js/swiper/swiper.css" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/swiper/swiper.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>소연 · SOYEON | Frontend Developer Portfolio</title>
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./js/common.js" defer></script>
+  </head>
 
-<body>
+  <body>
+    <!-- 스크롤 앵커 (fixed 헤더에는 #top을 걸 수 없음) -->
+    <span id="top"></span>
+
     <!-- [S] header -->
-    <header>
-        <div class="header_wrap">            
-            <a class="header_logo" href="index.html"></a>
-            <div class="gnb_wrap">
-                <ul class="gnb">
-                    <li><a href="#AboutMe">ABOUT ME</a></li>
-                    <li><a href="#Works">WORKS</a></li>
-                    <li><a href="#Contact">CONTACT</a></li>
-                </ul>
-            </div>
-        </div>
+    <header class="header">
+      <div class="container nav_wrap">
+        <a class="logo" href="#top">SOYEON<span>.</span></a>
+        <button class="ham_btn" type="button" aria-expanded="false">☰</button>
+
+        <nav class="nav">
+          <a class="menu active" href="#home">Home</a>
+          <a class="menu" href="#about">About</a>
+          <a class="menu" href="#projects">Projects</a>
+          <a class="menu" href="#skills">Skills</a>
+          <a class="menu" href="#contact">Contact</a>
+        </nav>
+
+        <a class="nav_contact" href="mailto:hello@example.com">Let's talk<span>↗</span></a>
+      </div>
     </header>
     <!-- // [E] header -->
 
-    <!-- [S] about -->
-    <section id="AboutMe" class="about_section">
-        <div class="about_wrap container">
-            <div class="about_area">
+    <!-- [S] main -->
+    <main>
+      <!-- [S] home -->
+      <section class="home section" id="home">
+        <div class="container home_grid">
 
-                <div class="title">
-                    <div class="img"></div>
-                    <div class="text">
-                        <h2>WEB PUBLISHER <strong>KIM SOYEON</strong></h2>
-                        <h3>웹 퍼블리셔 김소연</h3>
-                        <p>안녕하세요. <span>저는 침착하고 꼼꼼하게 그리고 사용자 편리함을 고려하며 깔끔하고 빠르게 퍼블리싱을 합니다.</span></p>
-                    </div>
-                </div>
-                
-                <div class="content">
-                    <div class="box one">
-                        <div class="inner">
-                            <h4>취미</h4>
-                            <p>#음악 듣기 #추리물 보기</p>
-                        </div>
+          <div class="home_copy reveal">
+            <p class="eyebrow">HELLO, I'M SOYEON KIM</p>
+            <h1>사용자 경험을<br /><em>코드로 구현하는</em><br />프론트엔드 개발자</h1>
+            <p class="home_text">복잡한 서비스를 쉽게 이해하고 사용할 수 있도록<br class="desktop_only"/> 구조와 인터랙션을 설계합니다.</p>
 
-                        <div class="inner">
-                            <h4>성격</h4>
-                            <p>#내향형 #현실주의형 <span class="break">#사고형 #탐색형<span></p>
-                        </div>
-                    </div>
-
-                    <div class="box two">
-                        <div class="inner">
-                            <h4>자격증</h4>
-                            <p>· 컴퓨터 활용 2급<br>
-                            · GTQ 일러스트 2급<br>
-                            · 웹디자인 기능사</p>
-                        </div>
-                    </div>
-    
-                    <div class="box three">                       
-                        <div class="inner">
-                            <h4>수료</h4>
-                            <p>· [스마트웹 & 콘텐츠개발]<br>UIUX 웹디자인 웹퍼블리셔 <span class="break">양성 과정 - 하이미디어[천호]</span></p>
-                            <p>2022.02.22 - 2022.08.16</p>
-                        </div>
-                    </div>
-
-                    <div class="box four">                       
-                        <div class="inner">
-                            <h4>경력</h4>
-                            <p>· (주)러닝앤코</p>
-                            <p>2022.10 - 2023.06</p>
-                            <p>· (주)시아나</p>
-                            <p>2023.06 - 2025.12</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="home_actions">
+              <a class="button btn_primary" href="#projects">프로젝트 보기<span>↓</span></a>
+              <a class="text_link" href="mailto:hello@example.com">이메일 보내기<span>↗</span></a>
             </div>
+          </div>
+
+          <div class="home_img reveal delay-1">
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+            
+            <div class="img_card img_card_main">
+              <span class="img_label">FRONTEND</span>
+              <strong>BUILD<br />WITH<br />CARE<span>.</span></strong>
+            </div>
+
+            <div class="img_card img_card_small">UI / UX<br /><span>2026</span></div>
+
+            <div class="art-dot dot-one"></div>
+            <div class="art-dot dot-two"></div>
+            <div class="art-dot dot-three"></div>
+          </div>
         </div>
-    </section>
-    <!-- // [E] about -->
+      </section>
+      <!-- // [E] home -->
 
-    <!-- [S] skill -->
-    <div class="skill_section container">
-            <div class="skill_wrap">
-
-                <h4>Skills</h4>
-                <div class="swiper skill">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><i class="i_photo"></i></div>
-                        <div class="swiper-slide"><i class="i_ill"></i></div>
-                        <div class="swiper-slide"><i class="i_figma"></i></div>
-                        <div class="swiper-slide"><i class="i_html"></i></div>
-                        <div class="swiper-slide"><i class="i_css"></i></div>
-                        <div class="swiper-slide"><i class="i_java"></i></div>
-                        <div class="swiper-slide"><i class="i_vscode"></i></div>
-                        
-                        <div class="swiper-slide"><i class="i_photo"></i></div>
-                        <div class="swiper-slide"><i class="i_ill"></i></div>
-                        <div class="swiper-slide"><i class="i_figma"></i></div>
-                        <div class="swiper-slide"><i class="i_html"></i></div>
-                        <div class="swiper-slide"><i class="i_css"></i></div>
-                        <div class="swiper-slide"><i class="i_java"></i></div>
-                        <div class="swiper-slide"><i class="i_vscode"></i></div>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <!-- // [E] skill -->
-
-    <!-- [S] works -->
-    <section id="Works" class="works_section">
-        <div class="works_wrap">
-            <div class="works_area">
-                <h4 class="container">Works</h4>
-
-                <div class="swiper works">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide one">
-                            <div class="content">
-                                <div class="inner">
-                                    <div class="title">
-                                        <p>(주)러닝앤코 작업물</p>
-                                        <strong>팬그램온</strong>
-                                    </div>
-                                
-                                    <div class="text">
-                                        <p class="pages">메인페이지, 커리큘럼, 프로그램, <span class="break">문의하기, Campus List</span></p>
-                                        <p>작업기간 : 4주</p>
-                                        <p>기술스택 : HTML, CSS, JavaScript, 포토샵</p>
-                                        <p>퍼블리싱 기여도 : 100%</p>
-                                    </div>
-                                </div>
-
-                                <a href="https://pangramon.biz" target="_blank" class="btn_round">CLICK</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide two">
-                            <div class="content">
-                                <div class="inner">
-                                    <div class="title">
-                                        <p>(주)러닝앤코 작업물</p>
-                                        <strong>EasyUtter</strong>
-                                    </div>
-                                
-                                    <div class="text">
-                                        <p class="pages">인트로, 메인페이지</p>
-                                        <p>작업기간 : 4주</p>
-                                        <p>기술스택 : HTML, CSS, JavaScript, 포토샵</p>
-                                        <p>퍼블리싱 기여도 : 90% (부사수로 참여)</p>
-                                    </div>
-                                </div>
-
-                                <a href="https://easyutter.com/login_form.php" target="_blank" class="btn_round">CLICK</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide three">
-                            <div class="content">
-                                <div class="inner">
-                                    <div class="title">
-                                        <p>(주)러닝앤코 작업물</p>
-                                        <strong>원바이트월드 홍보페이지</strong>
-                                    </div>
-                                
-                                    <div class="text">
-                                        <p class="pages">인트로, 메인페이지, <span class="break">영어사람, T.I.M.E., 페르소나,</span> <span class="break">원바이트월드 패스</span></p>
-                                        <p>작업기간 : 4주</p>
-                                        <p>기술스택 : HTML, CSS, JavaScript, 포토샵</p>
-                                        <p>퍼블리싱 기여도 : 100%</p>
-                                    </div>
-                                </div>
-
-                                <a href="https://onebite-world.com" target="_blank" class="btn_round">CLICK</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide four">
-                            <div class="content">
-                                <div class="inner">
-                                    <div class="title">
-                                        <p>(주)러닝앤코 작업물</p>
-                                        <strong>원바이트월드</strong>
-                                    </div>
-                                
-                                    <div class="text">
-                                        <p class="pages">인트로, 메인페이지</p>
-                                        <p>작업기간 : 4주</p>
-                                        <p>기술스택 : HTML, CSS, JavaScript, 포토샵</p>
-                                        <p>퍼블리싱 기여도 : 90% (부사수로 참여)</p>
-                                    </div>
-                                </div>
-
-                                <a href="https://1biteworld.com/login_form.php" target="_blank" class="btn_round">CLICK</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide five">
-                            <div class="content">
-                                <div class="inner">
-                                    <div class="title">
-                                        <p>(주)러닝앤코 작업물</p>
-                                        <strong>EVERYDAY ONEBITE</strong>
-                                    </div>
-                                
-                                    <div class="text">
-                                        <p class="pages">메인페이지(스킨 4종류)</p>
-                                        <p>작업기간 : 4주</p>
-                                        <p>기술스택 : HTML, CSS, JavaScript, 포토샵</p>
-                                        <p>퍼블리싱 기여도 : 100%</p>
-                                    </div>
-                                </div>
-
-                                <a href="http://everydayonebite.com" target="_blank" class="btn_round">CLICK</a>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
-
-                <div class="swiper works second">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide one">
-                            <div class="content">
-                                <div class="inner">
-                                    <div class="title">
-                                        <p>(주)시아나 작업물</p>
-                                        <strong>중소기업 중앙회 대고객 시스템 개편</strong>
-                                    </div>
-                                
-                                    <div class="text">
-                                        <p class="pages">전체 화면 퍼블리싱(PC/MO)</p>
-                                        <p>작업기간 : 3개월</p>
-                                        <p>기술스택 : HTML, CSS, JavaScript, 포토샵</p>
-                                        <p>퍼블리싱 기여도 : 100%</p>
-                                    </div>
-                                </div>
-
-                                <a href="https://www.kbiz.or.kr/ko/index/index.do" target="_blank" class="btn_round">CLICK</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide two">
-                            <div class="content">
-                                <div class="inner">
-                                    <div class="title">
-                                        <p>(주)시아나 작업물</p>
-                                        <strong>sc제일은행 웹 접근성 향상</strong>
-                                    </div>
-                                
-                                    <div class="text">
-                                        <p class="pages">웹 접근성 퍼블리싱</p>
-                                        <p>작업기간 : 5개월</p>
-                                        <p>기술스택 : HTML, CSS, JavaScript</p>
-                                        <p>퍼블리싱 기여도 : 100%</p>
-                                    </div>
-                                </div>
-
-                                <a href="https://open.standardchartered.co.kr/login/index" target="_blank" class="btn_round">CLICK</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide three">
-                            <div class="content">
-                                <div class="inner">
-                                    <div class="title">
-                                        <p>(주)시아나 작업물</p>
-                                        <strong>현대제철 전자상거래 플랫폼 고도화(HCORE STORE)</strong>
-                                    </div>
-                                
-                                    <div class="text">
-                                        <p class="pages">전체 화면 퍼블리싱(PC/MO)</p>
-                                        <p>작업기간 : 7개월</p>
-                                        <p>기술스택 : HTML, CSS, JavaScript, figma</p>
-                                        <p>퍼블리싱 기여도 : 100%</p>
-                                    </div>
-                                </div>
-
-                                <a href="https://hcorestore.hyundai-steel.com" target="_blank" class="btn_round">CLICK</a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide four">
-                            <div class="content">
-                                <div class="inner">
-                                    <div class="title">
-                                        <p>(주)시아나 작업물</p>
-                                        <strong>공제기금 홈페이지 메인화면  및 CSS 개선 용역</strong>
-                                    </div>
-                                
-                                    <div class="text">
-                                        <p class="pages">메인페이지(PC/MO)</p>
-                                        <p>작업기간 : 4주</p>
-                                        <p>기술스택 : HTML, CSS, JavaScript, figma</p>
-                                        <p>퍼블리싱 기여도 : 100%</p>
-                                    </div>
-                                </div>
-
-                                <a href="https://fund.kbiz.or.kr/index.do" target="_blank" class="btn_round">CLICK</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- [S] about -->
+      <section class="about section" id="about">
+        <div class="container about_grid">
+          <p class="section_label">01 / ABOUT</p>
+          <div class="about_content reveal">
+            <h2>디자인의 의도를 이해하고<br />사용자의 행동으로 연결합니다.</h2>
+            <p>
+              프론트엔드는 화면을 만드는 일을 넘어, 사용자가 서비스를 경험하는
+              흐름을 만드는 일이라고 생각합니다.<span class="break">컴포넌트의 재사용성과 접근성,
+              반응형 환경까지 고민하며 오래 유지되는 UI를 구현하려고 합니다.</span>
+            </p>
+          </div>
         </div>
-    </section>
-    <!-- // [E] works -->
+      </section>
+      <!-- // [E] about -->
 
-    <!-- [S] contact -->
-    <section id="Contact" class="contact_section">
-        <div class="contact_wrap container">
-            <div class="contact_area">
-                <div class="title">
-                    THANK YOU FOR WATCHING!
-                    <p>저에게 궁금한 점이 있으시다면 언제든 연락 주세요! <span>빠른 시일 내에 답장 드리겠습니다.</span></p>
-                </div>
+      <!-- [S] projects -->
+      <section class="projects section" id="projects">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section_label">02 / SELECTED WORK</p>
+            <h2>문제를 발견하고,<br /><em>경험으로 해결한 프로젝트</em></h2>
+          </div>
 
-                <div class="content">
-                    <div class="text">
-                        <span>CONTACT ME</span>
-                        <p>E-mail : kim971104@naver.com</p>
-                        <!-- <div class="kakao">
-                            <p>
-                                <a href="javascript:void(0)" class="active">Open Kakao Talk</a>
-                            </p>
-                        </div> -->
-                    </div>
-                    <div class="img"></div>
+          <article class="featured-project reveal">
+            <div class="project-visual swatchure-visual">
+              <div class="browser-bar">
+                <i></i><i></i><i></i><span>swatchure.co</span>
+              </div>
+              <div class="swatchure-ui">
+                <div class="swatchure-nav">
+                  SWATCHURE <span>EXPLORE　RECOMMEND　COMPARE</span>
                 </div>
+                <div class="swatchure-title">
+                  Find your<br /><em>perfect color.</em>
+                </div>
+                <div class="swatch-row">
+                  <b></b><b></b><b></b><b></b><b></b>
+                </div>
+              </div>
             </div>
+
+            <div class="project-info">
+              <div class="project-meta">
+                <span>PROJECT 01</span><span>2026 · PERSONAL PROJECT</span>
+              </div>
+              <h3>SWATCHURE</h3>
+              <p class="project-subtitle">
+                색조 제품 비교와 개인 맞춤 추천을 제공하는 뷰티 데이터 플랫폼
+              </p>
+              <p>
+                여러 브랜드의 립 제품을 한 화면에서 비교하고, 퍼스널컬러와 선호
+                스타일에 맞는 제품을 탐색할 수 있도록 설계했습니다.
+              </p>
+
+              <ul class="project-facts">
+                <li>
+                  <span class="fact-label">기간</span>
+                  <span class="fact-value">2026.01 ~ 2026.04</span>
+                </li>
+                <li>
+                  <span class="fact-label">역할</span>
+                  <span class="fact-value">프론트엔드 개발 (기획 겸임)</span>
+                </li>
+                <li>
+                  <span class="fact-label">기술</span>
+                  <span class="fact-value"
+                    >React, TypeScript, TailwindCSS, Recharts</span
+                  >
+                </li>
+              </ul>
+
+              <div class="tag-list">
+                <span class="tag tag-pink">React</span>
+                <span class="tag tag-green">TypeScript</span>
+                <span class="tag tag-beige">TailwindCSS</span>
+                <span class="tag tag-beige">Recharts</span>
+              </div>
+
+              <div class="project-links">
+                <a href="#">⧉ Github</a>
+                <a href="#">↗ View Demo</a>
+              </div>
+
+              <a class="project-link" href="#case-study"
+                >Case study <span>↗</span></a
+              >
+            </div>
+          </article>
+
+          <div class="project-grid">
+            <article class="project-card reveal">
+              <div class="project-thumb thumb-green">
+                <span>ROOM<br />FOR<br />IDEAS<span>.</span></span>
+              </div>
+              <div class="card-meta">
+                <span>PROJECT 02 · TEAM PROJECT</span><span>2025</span>
+              </div>
+              <h3>Roomly</h3>
+              <p>취향 기반 공간 큐레이션 서비스</p>
+              <ul class="card-facts">
+                <li>
+                  <span class="fact-label">기간</span>
+                  <span class="fact-value">2025.03 ~ 2025.05</span>
+                </li>
+                <li>
+                  <span class="fact-label">역할</span>
+                  <span class="fact-value">프론트엔드 개발</span>
+                </li>
+              </ul>
+              <div class="card-tags">
+                <span class="tag tag-green">Next.js</span>
+                <span class="tag tag-beige">API</span>
+              </div>
+            </article>
+
+            <article class="project-card reveal delay-1">
+              <div class="project-thumb thumb-blue">
+                <span>READ<br />MORE<br /><span>↗</span></span>
+              </div>
+              <div class="card-meta">
+                <span>PROJECT 03 · PERSONAL PROJECT</span><span>2025</span>
+              </div>
+              <h3>Page Turner</h3>
+              <p>읽은 책을 기록하고 공유하는 서비스</p>
+              <ul class="card-facts">
+                <li>
+                  <span class="fact-label">기간</span>
+                  <span class="fact-value">2025.06 ~ 2025.07</span>
+                </li>
+                <li>
+                  <span class="fact-label">역할</span>
+                  <span class="fact-value">기획 · 프론트엔드 개발</span>
+                </li>
+              </ul>
+              <div class="card-tags">
+                <span class="tag tag-pink">React</span>
+                <span class="tag tag-green">Firebase</span>
+              </div>
+            </article>
+
+            <article class="project-card reveal delay-2">
+              <div class="project-thumb thumb-sand">
+                <span>MINI<br />LAB<br /><span>03</span></span>
+              </div>
+              <div class="card-meta">
+                <span>PROJECT 04 · EXPERIMENT</span><span>2024</span>
+              </div>
+              <h3>Interaction Lab</h3>
+              <p>마이크로 인터랙션 실험 모음</p>
+              <ul class="card-facts">
+                <li>
+                  <span class="fact-label">기간</span>
+                  <span class="fact-value">2024.09 ~ 2024.11</span>
+                </li>
+                <li>
+                  <span class="fact-label">역할</span>
+                  <span class="fact-value">개인 실험 · 개발</span>
+                </li>
+              </ul>
+              <div class="card-tags">
+                <span class="tag tag-beige">JavaScript</span>
+                <span class="tag tag-pink">GSAP</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- [S] 02-2 / PUBLISHING WORKS — portfolio-publisher Works 슬라이드 이식 -->
+          <div class="works-block reveal">
+            <div class="works-block-head">
+              <p class="section_label">02-2 / PUBLISHING WORKS</p>
+              <h2>재직하며 퍼블리싱한<br /><em>실무 프로젝트</em></h2>
+            </div>
+          </div>
         </div>
 
-        <div class="copyright">ⓒ 2026. soyeon All rights reserved.</div>
-    </section>
-    <!-- // [E] contact -->
+        <!-- 러닝앤코 작업물 슬라이드 -->
+        <div class="works-slider-block">
+          <div class="swiper works-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide works-slide w1-1">
+                <div class="works-content">
+                  <div class="works-inner">
+                    <div class="works-title">
+                      <p>(주)러닝앤코 작업물</p>
+                      <strong>팬그램온</strong>
+                    </div>
+                    <div class="works-text">
+                      <p class="pages">
+                        메인페이지, 커리큘럼, 프로그램,<br />
+                        문의하기, Campus List
+                      </p>
+                      <p>작업기간 : 4주</p>
+                      <p>사용 툴 : 포토샵, VScode</p>
+                      <p>퍼블리싱 기여도 : 100%</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://pangramon.biz"
+                    target="_blank"
+                    rel="noopener"
+                    class="works-btn"
+                    >CLICK</a
+                  >
+                </div>
+              </div>
 
-    <!-- [S] 탑버튼 -->
-    <div>
-        <a
-            id="top_btn"
-            class="top_btn"
-            href="javascript:void(0)"
-            ><img src="images/icon/arrow_up.png"
-        /></a>
-    </div>
-  <!-- // [E] 탑버튼 -->
-</body>
+              <div class="swiper-slide works-slide w1-2">
+                <div class="works-content">
+                  <div class="works-inner">
+                    <div class="works-title">
+                      <p>(주)러닝앤코 작업물</p>
+                      <strong>EasyUtter</strong>
+                    </div>
+                    <div class="works-text">
+                      <p class="pages">인트로, 메인페이지</p>
+                      <p>작업기간 : 4주</p>
+                      <p>사용 툴 : 포토샵, VScode</p>
+                      <p>퍼블리싱 기여도 : 90% (부사수로 참여)</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://easyutter.com/login_form.php"
+                    target="_blank"
+                    rel="noopener"
+                    class="works-btn"
+                    >CLICK</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide works-slide w1-3">
+                <div class="works-content">
+                  <div class="works-inner">
+                    <div class="works-title">
+                      <p>(주)러닝앤코 작업물</p>
+                      <strong>원바이트월드<br />홍보페이지</strong>
+                    </div>
+                    <div class="works-text">
+                      <p class="pages">
+                        인트로, 메인페이지, 영어사람,<br />
+                        T.I.M.E., 페르소나, 원바이트월드 패스
+                      </p>
+                      <p>작업기간 : 4주</p>
+                      <p>사용 툴 : 포토샵, VScode</p>
+                      <p>퍼블리싱 기여도 : 100%</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://onebite-world.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="works-btn"
+                    >CLICK</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide works-slide w1-4">
+                <div class="works-content">
+                  <div class="works-inner">
+                    <div class="works-title">
+                      <p>(주)러닝앤코 작업물</p>
+                      <strong>원바이트월드</strong>
+                    </div>
+                    <div class="works-text">
+                      <p class="pages">인트로, 메인페이지</p>
+                      <p>작업기간 : 4주</p>
+                      <p>사용 툴 : 포토샵, VScode</p>
+                      <p>퍼블리싱 기여도 : 90% (부사수로 참여)</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://1biteworld.com/login_form.php"
+                    target="_blank"
+                    rel="noopener"
+                    class="works-btn"
+                    >CLICK</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide works-slide w1-5">
+                <div class="works-content">
+                  <div class="works-inner">
+                    <div class="works-title">
+                      <p>(주)러닝앤코 작업물</p>
+                      <strong>EVERYDAY<br />ONEBITE</strong>
+                    </div>
+                    <div class="works-text">
+                      <p class="pages">메인페이지 (스킨 4종류)</p>
+                      <p>작업기간 : 4주</p>
+                      <p>사용 툴 : 포토샵, VScode</p>
+                      <p>퍼블리싱 기여도 : 100%</p>
+                    </div>
+                  </div>
+                  <a
+                    href="http://everydayonebite.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="works-btn"
+                    >CLICK</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container works-controls">
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <!-- 시아나 작업물 슬라이드 -->
+        <div class="works-slider-block second">
+          <div class="swiper works-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide works-slide w2-1">
+                <div class="works-content">
+                  <div class="works-inner">
+                    <div class="works-title">
+                      <p>(주)시아나 작업물</p>
+                      <strong>중소기업 중앙회<br />대고객 시스템 개편</strong>
+                    </div>
+                    <div class="works-text">
+                      <p class="pages">전체 화면 퍼블리싱 (PC/MO)</p>
+                      <p>작업기간 : 3개월</p>
+                      <p>사용 툴 : 피그마, 인텔리제이</p>
+                      <p>퍼블리싱 기여도 : 100%</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://www.kbiz.or.kr/ko/index/index.do"
+                    target="_blank"
+                    rel="noopener"
+                    class="works-btn"
+                    >CLICK</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide works-slide w2-2">
+                <div class="works-content">
+                  <div class="works-inner">
+                    <div class="works-title">
+                      <p>(주)시아나 작업물</p>
+                      <strong>sc제일은행<br />웹 접근성 향상</strong>
+                    </div>
+                    <div class="works-text">
+                      <p class="pages">웹 접근성 퍼블리싱</p>
+                      <p>작업기간 : 5개월</p>
+                      <p>사용 툴 : VScode</p>
+                      <p>퍼블리싱 기여도 : 100%</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://open.standardchartered.co.kr/login/index"
+                    target="_blank"
+                    rel="noopener"
+                    class="works-btn"
+                    >CLICK</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide works-slide w2-3">
+                <div class="works-content">
+                  <div class="works-inner">
+                    <div class="works-title">
+                      <p>(주)시아나 작업물</p>
+                      <strong>현대제철 전자상거래<br />플랫폼 고도화(HCORE STORE)</strong>
+                    </div>
+                    <div class="works-text">
+                      <p class="pages">전체 화면 퍼블리싱 (PC/MO)</p>
+                      <p>작업기간 : 7개월</p>
+                      <p>사용 툴 : 피그마, VScode</p>
+                      <p>퍼블리싱 기여도 : 100%</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://hcorestore.hyundai-steel.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="works-btn"
+                    >CLICK</a
+                  >
+                </div>
+              </div>
+
+              <div class="swiper-slide works-slide w2-4">
+                <div class="works-content">
+                  <div class="works-inner">
+                    <div class="works-title">
+                      <p>(주)시아나 작업물</p>
+                      <strong>공제기금 홈페이지<br />메인화면 및 CSS 개선 용역</strong>
+                    </div>
+                    <div class="works-text">
+                      <p class="pages">메인페이지 (PC/MO)</p>
+                      <p>작업기간 : 4주</p>
+                      <p>사용 툴 : 피그마, 인텔리제이</p>
+                      <p>퍼블리싱 기여도 : 100%</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://fund.kbiz.or.kr/index.do"
+                    target="_blank"
+                    rel="noopener"
+                    class="works-btn"
+                    >CLICK</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container works-controls">
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <!-- // [E] 02-2 / PUBLISHING WORKS -->
+      </section>
+      <!-- // [E] projects -->
+
+      <!-- [S] skills -->
+      <section class="skills section" id="skills">
+        <div class="container skills_grid">
+          <p class="section_label">03 / TECHNICAL NOTES</p>
+          <div class="skills_content reveal">
+            <h2>배운 것을 실제 문제에<br />적용하며 성장합니다.</h2>
+            <div class="skill_list">
+              <div>
+                <span>01</span><strong>Frontend</strong>
+                <p>React · TypeScript · Next.js<br />HTML · CSS · JavaScript</p>
+              </div>
+
+              <div>
+                <span>02</span><strong>Styling</strong>
+                <p>CSS Modules · Tailwind CSS<br />Responsive Web · Accessibility</p>
+              </div>
+
+              <div>
+                <span>03</span><strong>Workflow</strong>
+                <p>Git · GitHub · Figma<br />Vite · REST API · Firebase</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- // [E] skills -->
+
+      <!-- [S] contact -->
+      <section class="contact section" id="contact">
+        <div class="container contact_inner reveal">
+          <p class="section_label">04 / CONTACT</p>
+          <h2>함께 더 나은 경험을<br /><em>만들어보고 싶습니다.</em></h2>
+          <a class="email_link" href="mailto:hello@example.com">j.2lly.k@gmail.com<span>↗</span></a>
+
+          <div class="contact_bottom">
+            <span>© 2026 SOYEON KIM</span>
+            <span>Frontend Developer Portfolio</span>
+            <div><a href="#top">Top ↑</a></div>
+          </div>
+        </div>
+      </section>
+      <!-- // [E] contact -->
+    </main>
+    <!-- // [E] main -->
+  </body>
+</html>
