@@ -1,58 +1,5 @@
 @charset "utf-8";
 
-/* font */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-ExtraBold.woff2') format('woff2');
-    font-weight: 800;
-    font-display: swap;
-}
-
-/* reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html {
-    scroll-behavior: smooth;
-}
-body {
-    margin: 0;
-    font-family: 'Pretendard';
-    line-height: 1.5;
-    color: #25302c;
-    background: #f8f7f3;
-}
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
 /* layout */
 .container {
     margin: 0 auto;
@@ -87,18 +34,6 @@ a {
     font-weight: 800;
     letter-spacing: -1px;
 }
-
-/* 포인트 컬러(핑크) 강조 텍스트 */
-.logo span,
-.img_card_main strong span,
-.project-visual em,
-.section-heading em,
-.works-block em,
-.case-content em,
-.contact h2 em {
-    color: #c66d80;
-}
-
 .nav {
     display: flex;
     gap: 34px;
@@ -120,12 +55,48 @@ a {
     border-radius: 30px;
 }
 
+/* 공통 */
+/* 포인트 컬러(핑크) 강조 텍스트 */
+.logo span,
+.img_card_main strong span,
+.project-visual em,
+.section-heading em,
+.works-block em,
+.case-content em,
+.contact h2 em {
+    color: #c66d80;
+}
+
 /* 화살표 등 링크 안쪽 아이콘 간격 */
 .nav_contact span,
 .text_link span,
 .project-link span,
 .email_link span {
     margin-left: 7px;
+}
+
+/* button */
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 28px;
+    padding: 16px 20px;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.btn_primary {
+    color: #fff;
+    background: #25302c;
+}
+.btn_primary span {
+    font-size: 18px;
+}
+
+.text_link {
+    padding-bottom: 5px;
+    font-size: 13px;
+    border-bottom: 1px solid #9da59f;
 }
 
 p span.break {
@@ -138,211 +109,7 @@ p span.break {
     border: 0;
     background: transparent;
 }
-
-/* ==========================================================================
-   04. Common Components
-   ========================================================================== */
-
-/* --- Labels / Meta text --- */
-.eyebrow,
-.section_label,
-.project-meta,
-.card-meta,
-.case-number {
-    font-size: 11px;
-    letter-spacing: .14em;
-    color: #84908a;
-}
-
-/* --- Button --- */
-.button {
-    display: inline-flex;
-    align-items: center;
-    gap: 28px;
-    padding: 16px 20px;
-    border-radius: 4px;
-    font-size: 13px;
-}
-
-.btn_primary {
-    background: #25302c;
-    color: #fff;
-}
-
-.btn_primary span {
-    font-size: 18px;
-}
-
-/* --- Text link --- */
-.text_link {
-    font-size: 13px;
-    border-bottom: 1px solid #9da59f;
-    padding-bottom: 5px;
-}
-
-
-/* ==========================================================================
-   05. home
-   ========================================================================== */
-.home {
-    min-height: 850px;
-    padding-top: 220px;
-    display: flex;
-    align-items: center;
-}
-
-.home_grid {
-    display: grid;
-    grid-template-columns: 1fr 520px;
-    gap: 100px;
-    align-items: center;
-}
-
-.home h1 {
-    font-size: clamp(46px, 5.1vw, 82px);
-    line-height: 1.12;
-    letter-spacing: -.07em;
-    margin: 24px 0 30px;
-    font-weight: 700;
-}
-
-.home h1 em {
-    font-style: normal;
-    color: #c66d80;
-}
-
-.home_text {
-    color: #748079;
-    font-size: 16px;
-}
-
-.home_actions {
-    display: flex;
-    align-items: center;
-    gap: 27px;
-    margin-top: 42px;
-}
-
-/* home_img */
-.home_img {
-    height: 500px;
-    position: relative;
-    background: #e9e4da;
-    overflow: hidden;
-    border-radius: 2px;
-}
-
-.art-orbit {
-    position: absolute;
-    border: 1px solid rgba(37, 48, 44, .22);
-    border-radius: 50%;
-    transform: rotate(-18deg);
-}
-
-.orbit-one {
-    width: 580px;
-    height: 210px;
-    left: -35px;
-    top: 125px;
-}
-
-.orbit-two {
-    width: 480px;
-    height: 170px;
-    left: 25px;
-    top: 170px;
-}
-
-.img_card {
-    position: absolute;
-    background: #25302c;
-    color: #f8f7f3;
-}
-
-.img_card_main {
-    width: 250px;
-    height: 320px;
-    left: 133px;
-    top: 92px;
-    padding: 22px;
-    transform: rotate(-8deg);
-    box-shadow: 20px 25px 40px rgba(37, 48, 44, .18);
-}
-
-.img_label {
-    font-size: 9px;
-    letter-spacing: .18em;
-    color: #b9c3bb;
-}
-
-.img_card_main strong {
-    display: block;
-    font-size: 48px;
-    line-height: .91;
-    letter-spacing: -.08em;
-    margin-top: 100px;
-}
-
-.img_card_small {
-    right: 32px;
-    bottom: 32px;
-    padding: 15px 18px;
-    font-size: 10px;
-    line-height: 1.7;
-    transform: rotate(8deg);
-}
-
-.img_card_small span {
-    color: #d58a9a;
-}
-
-.art-dot {
-    position: absolute;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-}
-
-.dot-one {
-    background: #c66d80;
-    top: 54px;
-    right: 90px;
-}
-
-.dot-two {
-    background: #829f8b;
-    bottom: 95px;
-    left: 70px;
-}
-
-.dot-three {
-    background: #d4a96f;
-    top: 90px;
-    left: 75px;
-}
-
-
-/* ==========================================================================
-   06. about
-   ========================================================================== */
-.about {
-    border-top: 1px solid #dfe2dc;
-    border-bottom: 1px solid #dfe2dc;
-}
-
-/* about / skills / case 공통 2단 그리드 */
-.about_grid,
-.skills_grid {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 100px;
-}
-
-.about_content {
-    max-width: 850px;
-}
-
-/* 섹션 공통 대제목 */
+/* 섹션 대제목 */
 .about h2,
 .section-heading h2,
 .works-block h2,
@@ -355,24 +122,163 @@ p span.break {
     margin: 0 0 28px;
 }
 
+.eyebrow,
+.section_label,
+.project-meta,
+.card-meta,
+.case-number {
+    font-size: 11px;
+    letter-spacing: .14em;
+    color: #84908a;
+}
+
+/* home */
+.home {
+    display: flex;
+    align-items: center;
+    padding-top: 220px;
+    min-height: 850px;
+}
+
+.home_grid {
+    display: grid;
+    grid-template-columns: 1fr 520px;
+    align-items: center;
+    gap: 100px;
+}
+
+.home h1 {
+    margin: 24px 0 30px;
+    /* font-size: clamp(46px, 5.1vw, 82px); */
+    font-weight: 700;
+    font-size: 82px;
+    line-height: 1.12;
+    letter-spacing: -.07em;
+}
+.home h1 em {
+    font-style: 400;
+    color: #c66d80;
+}
+
+.home_text {
+    font-size: 16px;
+    color: #748079;
+}
+
+.home_actions {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    margin-top: 42px;
+}
+
+.home_img {
+    position: relative;
+    height: 500px;
+    background: #e9e4da;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.card_img {
+    position: absolute;
+    border: 1px solid rgba(37, 48, 44, .22);
+    border-radius: 50%;
+    transform: rotate(-18deg);
+}
+.img_one {
+    left: -35px;
+    top: 125px;
+    width: 580px;
+    height: 210px;
+}
+.img_two {
+    left: 25px;
+    top: 170px;
+    width: 480px;
+    height: 170px;
+}
+
+.img_card {
+    position: absolute;
+    color: #f8f7f3;
+    background: #25302c;
+}
+.img_card_main {
+    padding: 22px;
+    left: 133px;
+    top: 92px;
+    width: 250px;
+    height: 320px;
+    transform: rotate(-8deg);
+    box-shadow: 20px 25px 40px rgba(37, 48, 44, .18);
+}
+
+.img_label {
+    font-size: 9px;
+    letter-spacing: .18em;
+    color: #b9c3bb;
+}
+.img_card_main strong {
+    display: block;
+    margin-top: 100px;
+    font-size: 48px;
+    line-height: .91;
+    letter-spacing: -.08em;
+}
+.img_card_small {
+    padding: 15px 18px;
+    right: 32px;
+    bottom: 32px;
+    font-size: 10px;
+    line-height: 1.7;
+    transform: rotate(8deg);
+}
+.img_card_small span {
+    color: #d58a9a;
+}
+
+.img_dot {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+.pink {
+    background: #c66d80;
+    top: 54px;
+    right: 90px;
+}
+.green {
+    background: #829f8b;
+    bottom: 95px;
+    left: 70px;
+}
+.yellow {
+    background: #d4a96f;
+    top: 90px;
+    left: 75px;
+}
+
+/* about */
+.about {
+    border-top: 1px solid #dfe2dc;
+    border-bottom: 1px solid #dfe2dc;
+}
+
+.about_grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 100px;
+}
+
+.about_content {
+    max-width: 850px;
+}
 .about_content > p {
     max-width: 690px;
     color: #6e7972;
     font-size: 16px;
-}
-
-.mini-facts {
-    display: flex;
-    gap: 24px;
-    margin-top: 38px;
-    font-size: 12px;
-    color: #52635a;
-}
-
-.mini-facts span:before {
-    content: "·";
-    color: #c66d80;
-    margin-right: 7px;
 }
 
 
@@ -388,9 +294,7 @@ p span.break {
 }
 
 
-/* ==========================================================================
-   08. Featured Project
-   ========================================================================== */
+/* project */
 .featured-project {
     display: grid;
     grid-template-columns: 1.18fr .82fr;
@@ -865,11 +769,15 @@ p span.break {
 .swiper .swiper-notification,
 
 
-/* ==========================================================================
-   10. Skills
-   ========================================================================== */
+/* skills */
 .skills {
     background: #e7eee5;
+}
+
+.skills_grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 100px;
 }
 
 .skills_content {
@@ -877,32 +785,29 @@ p span.break {
 }
 
 .skill_list {
-    border-top: 1px solid #b9c8b9;
     margin-top: 60px;
+    border-top: 1px solid #b9c8b9;
 }
-
 .skill_list > div {
     display: grid;
     grid-template-columns: 60px 1fr 1fr;
+    align-items: start;
     gap: 20px;
     padding: 26px 0;
     border-bottom: 1px solid #b9c8b9;
-    align-items: start;
 }
-
 .skill_list span {
-    color: #849b88;
     font-size: 12px;
+    color: #849b88;
 }
-
 .skill_list strong {
     font-size: 18px;
 }
-
 .skill_list p {
     margin: 0;
-    color: #66766c;
     font-size: 13px;
+    color: #66766c;
+
 }
 
 /* contact */
@@ -915,14 +820,15 @@ p span.break {
 }
 
 .contact h2 {
-    font-size: clamp(44px, 6vw, 80px);
+    /* font-size: clamp(44px, 6vw, 80px); */
+    font-size: 80px;
     margin: 25px 0 45px;
 }
 
 .email_link {
+    padding-bottom: 8px;
     font-size: 22px;
     border-bottom: 1px solid #9da59f;
-    padding-bottom: 8px;
 }
 
 .contact_bottom {
@@ -930,25 +836,20 @@ p span.break {
     grid-template-columns: 1fr 1fr auto;
     margin-top: 170px;
     padding-top: 20px;
-    border-top: 1px solid #dfe2dc;
     font-size: 11px;
     color: #84908a;
+    border-top: 1px solid #dfe2dc;
 }
-
 .contact_bottom a {
     color: #25302c;
 }
 
-
-/* ==========================================================================
-   13. Reveal Animation
-   ========================================================================== */
+/* animation */
 .reveal {
     opacity: 0;
     transform: translateY(22px);
     transition: opacity .7s ease, transform .7s ease;
 }
-
 .reveal.visible {
     opacity: 1;
     transform: none;
@@ -956,7 +857,6 @@ p span.break {
 
 .delay-1 { transition-delay: .12s; }
 .delay-2 { transition-delay: .22s; }
-
 
 /* ==========================================================================
    14. Responsive — Tablet / Mobile (max-width: 900px)
